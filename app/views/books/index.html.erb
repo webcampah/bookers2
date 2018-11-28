@@ -15,7 +15,7 @@
     <div class="col-xs-3">
      <h2>User info</h2>
       <table class="table">
-    	<tr><%= attachment_image_tag @user, :image, :fill, 60, 60, format: 'jpeg', fallback: "no_image.jpg" %></tr>
+    	<tr><%= attachment_image_tag @user, :image, :fill, 60, 60, format: 'jpeg', fallback: "no_image.jpg", class: "user_image" %></tr>
     	<tr>
     		<th>name</th>
     		<th><%= @user.name %></th>
@@ -49,26 +49,19 @@
         <th>Opinion</th>
         </tr>
         </thead>
-        <tbody>
         <% @books.each do |book| %>
-    			<td><%= attachment_image_tag book.user, :image, :fill, 100, 100, format: 'jpeg', fallback: "no_image.jpg" %></td>
+        <tbody>
+        <tr>
+    			<td><%= attachment_image_tag book.user, :image, :fill, 100, 100, format: 'jpeg', fallback: "no_image.jpg", class: "user_image" %></td>
     			<td><%= link_to book.book_title, book_path(book), class: "book_#{book.id}" %></td>
     			<td><%= book.book_body %></td>
     		</tr>
-        <% end %>
         </tbody>
+        <% end %>
     	</table>
     </div>
     		</div>
     	</div>
     </div>
-
-<footer class="container">
-<div class="row">
-<div class="col-xs-3 col-xs-offset-9">
-<p>CopyRight Infratop.inc</p>
-</div>
-<div>
-</footer>
 </body>
 </html>

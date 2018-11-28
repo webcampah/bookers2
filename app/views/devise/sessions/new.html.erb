@@ -27,12 +27,12 @@
 
   <div class="field">
     <%= f.label :name %><br />
-    <%= f.text_field :name, autofocus: true, autocomplete: " username" %>
+    <%= f.text_field :name, autofocus: true, autocomplete: " username", class: "name" %>
   </div>
 
   <div class="field">
     <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
+    <%= f.password_field :password, autocomplete: "current-password", class: "password" %>
   </div>
 
   <% if devise_mapping.rememberable? -%>
@@ -48,12 +48,6 @@
 <%= render "devise/shared/links" %>
 
 </div>
-<footer class="container>
-<div class="row">
-<div class="col-xs-3 col-xs-offset-9">
-<p>CopyRight Infratop.inc</p>
-</div>
-<div>
-</footer>
+
 </body>
 </html>

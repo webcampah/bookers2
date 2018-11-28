@@ -22,7 +22,7 @@
 
       <h2>User info</h2>
       <table class="table">
-      <tr><%= attachment_image_tag @book.user, :image, :fill, 60, 60, format: 'jpeg', fallback: "no_image.jpg" %></tr>
+      <tr><%= attachment_image_tag @book.user, :image, :fill, 60, 60, format: 'jpeg', fallback: "no_image.jpg", class: "user_image" %></tr>
       <tr>
         <th>name</th>
         <th><%= @book.user.name %></th>
@@ -32,7 +32,7 @@
         <th><%= @book.user.introduction %></th>
       </tr>
       </table>
-      <%= link_to '', edit_user_path, class: "btn btn-block btn-default glyphicon glyphicon-wrench edit_user_#{@user}" %>
+      <%= link_to '', edit_user_path, class: "btn btn-block btn-default glyphicon glyphicon-wrench edit_user_#{@book.user.id}" %>
 
       <h2>New book</h2>
       <%= form_for(@book) do |f| %>
@@ -51,7 +51,7 @@
     <table class="table">
       <tr>
         <td><%= link_to user_path(@book.user_id), class: "user_#{@book.user_id}" do %>
-        <%= attachment_image_tag @book.user, :image, :fill, 50, 50, format: 'jpeg', fallback: "no_image.jpg" %><br>
+        <%= attachment_image_tag @book.user, :image, :fill, 50, 50, format: 'jpeg', fallback: "no_image.jpg", class: "user_image" %><br>
         <%= @book.user.name %>
         <% end %></td>
         <td><%= link_to @book.book_title, book_path(@book), class: "book_#{@book.id}" %></td>
@@ -59,7 +59,7 @@
 
         <% if @book.user == current_user %>
         <td><%= link_to "Edit", edit_book_path(@book), class: "btn btn-success ediit_book_#{@book.id}" %></td>
-        <td><%= link_to "Destroy", book_path(@book), method: :delete, data: { confirm: '本当に削除しますか？' }, class: "btn btn-danger destroy_book_#{@book}" %></td>
+        <td><%= link_to "Destroy", book_path(@book), method: :delete, data: { confirm: '本当に削除しますか？' }, class: "btn btn-danger destroy_book_#{@book.id}" %></td>
         <% end %>
         </tr>
         </table>
@@ -67,13 +67,5 @@
       </div>
     </div>
   </div>
-</body>
-<footer class="container">
-<div class="row">
-<div class="col-xs-3 col-xs-offset-9">
-<p>CopyRight Infratop.inc</p>
-</div>
-<div>
-</footer>
 </body>
 </html>
