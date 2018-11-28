@@ -15,13 +15,13 @@
   <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="#">Bookers</a>
+      <h2>Bookers</h2>
    </div>
    <ul class="nav navbar-nav navbar-right">
-      <li><%= link_to "Home", user_path(current_user), class: "glyphicon glyphicon-home user_#{current_user}" %></li>
+      <li><%= link_to "Home", user_path(current_user), class: "glyphicon glyphicon-home home" %></li>
       <li><%= link_to "Users", users_path, class: "glyphicon glyphicon-user users" %></li>
       <li><%= link_to "Books", books_path, class: "glyphicon glyphicon-book books" %></li>
-      <li><%= link_to "Logout", destroy_user_session_path, method: :delete, class: "glyphicon glyphicon-log-in sign_in" %></li>
+      <li><%= link_to "Logout", destroy_user_session_path, method: :delete, class: "glyphicon glyphicon-log-in logout" %></li>
     </ul>
   </div>
 </nav>
@@ -32,7 +32,7 @@
   <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="#">Bookers</a>
+      <h2>Bookers</h2>
    </div>
     <ul class="nav navbar-nav navbar-right">
       <li><%= link_to "Home", root_path, class: "glyphicon glyphicon-home home" %></li>
