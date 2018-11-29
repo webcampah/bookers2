@@ -32,7 +32,7 @@
         <th><%= @book.user.introduction %></th>
       </tr>
       </table>
-      <%= link_to '', edit_user_path, class: "btn btn-block btn-default glyphicon glyphicon-wrench edit_user_#{@book.user.id}" %>
+      <%= link_to '', edit_user_path(@book.user), class: "btn btn-block btn-default glyphicon glyphicon-wrench edit_user_#{@book.user.id}" %>
 
       <h2>New book</h2>
       <%= form_for(@book) do |f| %>
