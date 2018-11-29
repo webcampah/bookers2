@@ -16,6 +16,7 @@ class BooksController < ApplicationController
 			flash[:notice] = "Book was successfully updated."
 			redirect_to book_path(@book)
 		else
+		@user = current_user
 		@books = Book.all
 		render :index
 		end
